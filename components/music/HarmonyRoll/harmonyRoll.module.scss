@@ -1,0 +1,189 @@
+//components/music/HarmonyRoll/harmonyRoll.module.scss
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.stringHost {   
+    background: rgba(255, 255, 255, 0.10);
+    overflow: hidden;
+    /* было auto -> убрали внутренний скролл */
+    position: relative;
+}
+
+.stringCanvas {
+    position: relative;
+    height: 100%;
+    min-width: 100%;
+
+    z-index: 2;
+}
+
+.stringLine {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 4px;
+    border-radius: 999px;
+
+    background: linear-gradient(90deg,
+            rgba(123, 97, 255, 0.75),
+            rgba(255, 79, 216, 0.65));
+
+    box-shadow:
+        0 2px 10px rgba(123, 97, 255, 0.25),
+        0 2px 10px rgba(255, 79, 216, 0.20);
+
+    opacity: 0.95;
+    z-index: 3;
+    pointer-events: none;
+}
+
+
+.chordBall {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    height: 34px;
+    min-width: 56px;
+    padding: 0 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+    border: 1px solid rgba(140, 140, 150, 0.45);
+    background: rgba(255, 79, 216, 0.14);
+
+    font-weight: 700;
+    font-size: 12px;
+    cursor: grab;
+    user-select: none;
+}
+
+.chordBall:active,
+.chordBall:focus,
+.chordBall:focus-visible {
+    transform: translateY(-50%) !important;
+    /* КЛЮЧ: не даём transform сбиться */
+    outline: none;
+}
+
+.chordBall:active {
+    cursor: grabbing;
+}
+
+
+.palette {
+
+    background: rgba(255, 255, 255, 0.10);
+    padding: 0 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.paletteRow {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    /* было auto -> убрали */
+    padding-bottom: 0;
+    overflow: hidden;
+    /* без внутреннего скролла */
+}
+
+
+.paletteTitle {
+    font-size: 12px;
+    opacity: 0.75;
+    margin-bottom: 8px;
+}
+
+
+.paletteBall {
+    height: 34px;
+    min-width: 56px;
+    padding: 0 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+    border: 1px solid rgba(140, 140, 150, 0.45);
+    background: rgba(255, 79, 216, 0.14);
+
+    font-weight: 700;
+    font-size: 12px;
+    cursor: grab;
+    user-select: none;
+}
+
+.paletteBall:active,
+.paletteBall:focus,
+.paletteBall:focus-visible {
+    transform: none !important;
+    outline: none;
+}
+
+.paletteBall:active {
+    cursor: grabbing;
+}
+
+.paletteHint {
+    margin-top: 8px;
+    font-size: 12px;
+    opacity: 0.65;
+}
+
+
+.ghost {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+
+  height: 34px;
+  min-width: 56px;
+  padding: 0 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  border: 1px solid rgba(140, 140, 150, 0.45);
+  background: rgba(255, 79, 216, 0.14);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+
+  font-weight: 700;
+  font-size: 12px;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  /* ключевое: центрируем по точке left/top */
+  transform: translate(-50%, -50%);
+}
+
+.paletteFloating {
+  padding: 6px 8px;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0,0,0,0.06);
+
+  pointer-events: auto;
+  z-index: 999;
+}

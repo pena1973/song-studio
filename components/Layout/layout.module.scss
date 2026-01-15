@@ -1,0 +1,17 @@
+.shell {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+  min-height: 0; /* важно для внутренних скроллов */
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}

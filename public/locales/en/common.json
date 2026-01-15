@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "music": "Music",
+    "poetry": "Words",
+    "settings": "Service"
+  },
+  "pages": {
+    "music": {
+      "title": "Music Studio",
+      "desc": "Empty for now. Generation, playback and editor will live here."
+    },
+    "poetry": {
+      "title": "Poetry Studio",
+      "desc": "Empty for now. Words, meter and rhythm tools will live here."
+    },
+    "settings": {
+      "title": "Service",
+      "desc": "Project settings, model, export/import and more."
+    }
+  }
+}
